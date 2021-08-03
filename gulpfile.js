@@ -10,9 +10,12 @@ var gulp = require("gulp"),
   rename = require("gulp-rename"),
   autoprefixer = require("gulp-autoprefixer"),
   notify = require("gulp-notify"),
-  rsync = require("gulp-rsync");
-deploy = require("gulp-gh-pages");
-useref = require("gulp-useref");
+  rsync = require("gulp-rsync"),
+  deploy = require("gulp-gh-pages"),
+  useref = require("gulp-useref"),
+  imagemin = require("gulp-imagemin"),
+  cssnano = require("gulp-cssnano"),
+  gulpIf = require("gulp-if");
 
 gulp.task("browser-sync", function () {
   browsersync({
@@ -93,6 +96,26 @@ gulp.task("deploy", function () {
   return gulp.src("./dist/**/*").pipe(deploy());
 });
 
-gulp.task("useref", function () {
-  return gulp.src("app/*.html").pipe(useref()).pipe(gulp.dest("dist"));
+gulp.task("create-dist", function () {
+  return gulp
+    .src("app/*.html")
+    .pipe(useref())
+    .pipe(gulpIf("app/js/*.js", uglify()))
+    .pipe(gulpIf("app/css/*.css", cssnano()))
+    .pipe(gulp.dest("dist"));
+});
+
+gulp.task("copy-js", function () {
+  return gulp.src("app/js/*.js").pipe(gulp.dest("dist/js"));
+});
+
+gulp.task("copy-css", function () {
+  return gulp.src("app/css/*.css").pipe(gulp.dest("dist/css"));
+});
+
+gulp.task("images", function () {
+  return gulp
+    .src("app/img/**/*.+(png|jpg|gif|svg)")
+    .pipe(imagemin())
+    .pipe(gulp.dest("dist/img"));
 });
