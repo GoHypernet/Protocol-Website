@@ -1,0 +1,506 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+// ≥992px
++media-breakpoint-down(md)
+    .team, .partners
+        .section-header
+            text-align: center
+            &--tire
+                h4
+                    display: inline-block
+
+// ≥768px
++media-breakpoint-down(sm)
+    .facts
+        &__line-list
+            flex-wrap: wrap
+            justify-content: center
+        &__item
+            margin-top: 0 !important
+            margin: 0 25px 20px
+            width: 150px
+            &:last-child
+                margin-bottom: 0
+
+// ≥576px
++media-breakpoint-down(xs)
+
+@media only screen and (max-width: 992px) and (min-width: 768px) 
+    .footer
+        text-align: center
+        .logo
+            justify-content: center
+        .social-list
+            justify-content: center
+        .subscribe
+            margin: 0 auto
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+    .promo
+        &
+            display: flex
+            .btn
+                width: auto
+                &:first-child
+                    margin-right: 20px
+                    margin-bottom: 0
+
+    .flip-clock-divider:first-child .flip-clock-label
+        left: 32px
+
+    .flip-clock-divider .flip-clock-label
+        display: block
+
+    .timer__titles
+        display: none
+
+    .services
+        &__right, &__left
+            display: flex
+            justify-content: space-between
+
+    .road
+        &__item-title
+            position: absolute
+            left: -230px
+            text-align: right
+            width: 200px
+            top: -1px
+
+    .economy
+        &__block
+            padding: 35px 30px 30px	
+
+    .docs
+        .col-12
+            &:nth-last-child(2)
+                .doc
+                    margin-bottom: 0
+
+    .token
+        &__info-list
+            li
+                display: flex
+                span
+                    margin-right: 50px
+
+    .doc
+        height: 230px
+        margin-bottom: 30px
+
+    .team
+        padding-bottom: 10px        
+
+    .team-member
+        display: flex
+        text-align: left
+        margin-bottom: 50px
+        &__avatar
+            margin: 0
+        &__content
+            padding-left: 22px
+        &__social
+            justify-content: flex-start
+
+    .subscribe
+        .form__row 
+            display: flex
+        .form__btn
+            width: 86px
+            padding: 0
+            text-align: center
+        .form__input
+            margin-right: 6px
+
+// ≤768px
++media-breakpoint-up(md)
+
+    h1
+        font-size: 50px
+        line-height: 50px
+        margin-bottom: 40px
+
+    h2
+        font-size: 40px
+        line-height: 45px
+
+    h3
+        font-size: 20px
+
+    h4
+        margin-bottom: 30px
+
+    .section
+        padding: 100px 0 
+        &--no-pad-bot
+            padding-bottom: 0
+        &--no-pad-top
+            padding-top: 0
+
+    .section-header
+        &--big-margin
+            margin-bottom: 100px
+        &--medium-margin
+            margin-bottom: 60px
+        &--small-margin
+            margin-bottom: 35px
+
+    .fixed-menu
+        &__header
+            padding: 0 40px
+        
+
+    .header
+        padding: 0 40px
+        &.sticky
+            padding: 0 40px
+            
+    .timer
+        margin-bottom: 70px
+
+    .map
+        &__title-bg
+            display: block
+            left: -30px
+
+    .services
+        &__items
+            display: flex
+            justify-content: space-between
+    
+    .service
+        width: 160px
+        height: 210px
+        margin-bottom: 0
+
+    .road
+        &__item
+            padding-left: 80px
+            &:before
+                content: ''
+                position: absolute
+                top: 11px
+                left: 30px
+                width: 40px
+                border-bottom: 1px solid #495170
+
+    .cases
+        &__list
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+    
+    .cases__item
+        flex: 0 calc(50% - 15px)
+        text-align: left
+        &-icon
+            margin-right: 30px
+
+    .data
+        margin-bottom: 70px
+        &__img
+            display: block
+
+    .counter__item
+        &-title
+            font-size: 18px
+            margin-bottom: 0px
+        &-value
+            font-size: 25px
+
+    .counter__item
+        position: absolute
+        text-align: left
+
+    .counter__item-1
+        bottom: 0px
+        left: 90px
+
+    .counter__item-2
+        bottom: 65px
+        left: 280px
+
+    .counter__item-3
+        bottom: 105px
+        right: 20px
+
+    .counter__item-4
+        bottom: 30px
+        right: -10px
+
+    .economy
+        &__block
+            padding: 55px 100px 60px	
+        p
+            margin-bottom: 40px
+
+    .about
+        p
+            margin-bottom: 38px
+            
+    .token
+        &__info-list
+            margin-bottom: 50px
+        &__desc-title
+            margin-bottom: 25px
+        &__desc-text
+            margin-bottom: 46px
+
+    .doc
+        height: 215px
+    
+    .accordion
+        li
+            paddint: 20px 25px 20px 0
+        a
+            font-size: 20px
+            line-height: 30px
+            &:after
+                top: 28px
+            &:before
+                top: 20px
+        p
+            padding-top: 10px
+            font-size: 18px
+            line-height: 30px
+
+    .advisors
+        padding-bottom: 60px
+
+    .advisor
+        display: block
+        &__img
+            margin-bottom: 25px
+        &__title
+            margin-bottom: 15px
+
+
+    .team
+        padding-bottom: 50px 
+
+    .news-carousel
+        &__item
+            margin-bottom: 50px
+
+    .press
+        padding-bottom: 70px
+        &__item
+            height: 290px
+// ≤992px
++media-breakpoint-up(lg)
+    .section
+        padding: 150px 0
+        &--no-pad-bot
+            padding-bottom: 0
+        &--no-pad-top
+            padding-top: 0
+
+    .promo
+        padding-top: 270px
+        &__img
+            display: block
+            right: -380px
+
+    .economy
+        padding-top: 260px
+        padding-bottom: 0
+        &__video-btn
+            top: 80px
+            left: -65px
+            transform: translateX(0)        
+
+    .service
+        width: 210px
+        height: 250px
+
+    .token
+        &__img
+            display: block
+
+    .chart
+        margin-bottom: 0
+
+    .team
+        padding-bottom: 100px 
+
+    .map
+        &__title-bg
+            left: 0px
+
+    .road
+        &__item
+            padding-left: 106px
+            &:before
+                left: 40px
+                width: 47px
+
+    .cases__item
+        display: flex
+        align-items: flex-start
+        margin-bottom: 60px
+
+    .counter__item
+        &-title
+            font-size: 20px
+            margin-bottom: 0px
+        &-value
+            font-size: 30px
+
+    .counter__item
+        position: absolute
+        text-align: left
+
+    .counter__item-1
+        bottom: 25px
+        left: 110px
+
+    .counter__item-2
+        bottom: 112px
+        left: 370px
+
+    .counter__item-3
+        bottom: 165px
+        right: 100px
+
+    .counter__item-4
+        bottom: 55px
+        right: 60px
+
+    .logoes
+        img
+            margin: 0 15px 20px
+
+    .partners
+        .logoes
+            justify-content: space-between
+            img
+                margin: 0
+
+    .advisor
+        &__post
+            margin-bottom: 20px
+
+    .press
+        padding-bottom: 120px
+        &__item
+            height: 220px
+            margin-bottom: 0
+
+    .social-block
+        margin-bottom: 0 
+// ≤1200px
++media-breakpoint-up(xl)
+    .section-header
+        .bg-title
+            display: block
+
+    .header
+       &__right
+            display: flex
+    
+    .menu
+        display: flex
+
+    .btn-menu
+        display: none
+
+    .promo
+        &__img
+            right: -200px
+
+    .economy
+        &__video-btn
+            left: -35px
+
+    .services
+        &__bg
+            display: block
+
+    .road__item
+        margin-bottom: 50px
+        &:after
+           height: calc(100% + 50px)
+
+    .counter__item-1
+        bottom: 40px
+        left: 125px
+
+    .counter__item-2
+        bottom: 150px
+        left: 440px
+
+    .counter__item-3
+        bottom: 205px
+        right: 160px
+
+    .counter__item-4
+        bottom: 75px
+        right: 100px
+
+    .token
+        &__img
+            left: -220px
+
+    .docs
+        .col-12
+            &:last-child
+                .doc
+                    margin-bottom: 0
+    
+    .doc
+        height: 230px
+        margin-bottom: 0    
+
+    .advisors
+        padding-bottom: 70px
+        
+    .advisor
+        text-align: left
+        display: flex
+        margin-bottom: 80px
+        &__img
+            margin-right: 40px
+            margin-bottom: 0
+            &:after
+                content: ''
+                position: absolute
+                top: 0
+                right: -100%
+                width: 100%
+                height: 100%
+                background-color: #252d4b
+
+    .press
+        &__item
+            height: 255px
+
+@media only screen and (min-width : 1400px)
+    .logo
+        &__title
+            font-size: 30px
+
+    .menu
+        &__item
+            margin-right: 35px
+
+    .doc
+        height: 265px
+
+@media only screen and (min-width : 1680px)
+    .about
+        &__bg
+            bottom: -500px
+
+    .cases
+        &__elements
+            display: block
