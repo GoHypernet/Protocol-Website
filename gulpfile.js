@@ -11,6 +11,7 @@ var gulp          = require('gulp'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require("gulp-notify"),
 		rsync         = require('gulp-rsync');
+		deploy      = require('gulp-gh-pages');
 
 gulp.task('browser-sync', function() {
 	browsersync({
@@ -78,3 +79,11 @@ gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
 });
 
 gulp.task('default', ['watch']);
+
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task("deploy", function () {
+  return gulp.src("./dist/**/*").pipe(deploy());
+});
